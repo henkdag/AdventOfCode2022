@@ -23,10 +23,9 @@ def half1():
         half2 = []
         index = 0
         duplicate = ""
-        length = len(i)
 
         for letter in i:
-            if index < (length / 2):
+            if index < (len(i) / 2):
                 half1.append(letter)
             else:
                 half2.append(letter)
@@ -50,12 +49,13 @@ def half2():
     dividedlist = []
 
     while index < len(data):
-        dividedlist.append([cleandata[index], cleandata[index+1], cleandata[index+2]])
+        dividedlist.append([data[index], data[index+1], data[index+2]])
         index += 3
     for i in dividedlist:
         for letter in i[0]:
             if letter in i[1] and letter in i[2]:
                 duplicate = letter
+                break
         priority += alphabetscore[duplicate]
     print(priority)
 
